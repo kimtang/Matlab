@@ -1,0 +1,35 @@
+[
+     {
+        "id": "tools",
+        "children":
+        [{
+            "caption": "SublimeREPL",
+            "mnemonic": "r",
+            "id": "SublimeREPL",
+            "children":
+            [
+                {"command": "repl_open",
+                 "caption": "Matlab",
+                 "id": "repl_matlab",
+                 "mnemonic": "m",
+                 "args": {
+                        "type": "subprocess",
+                        "encoding": "utf8",
+                        "external_id": "matlab",
+                        "cmd": {"linux": ["scala", "-cp", "${packages}/SublimeREPL/config/Matlab/matlabcontrol-4.1.0.jar", "-i","${packages}/SublimeREPL/config/Matlab/start.scala" ],
+                                "osx": ["scala", "-cp", "${packages}/SublimeREPL/config/Matlab/matlabcontrol-4.1.0.jar", "-i","${packages}/SublimeREPL/config/Matlab/start.scala" ],
+                                "windows": ["scala.bat", "-cp", "${packages}\\SublimeREPL\\config\\Matlab\\matlabcontrol-4.1.0.jar", "-i","${packages}\\SublimeREPL\\config\\Matlab\\start.scala" ]},
+                        "soft_quit": "\nexit\n",
+                        "cwd": "$file_path",
+                        "cmd_postfix": "\n", 
+                        "extend_env": {"osx": {"EMACS": "1", "PATH": "{PATH}:/usr/local/bin"},
+                                       "linux": {"EMACS": "1", "PATH": "{PATH}:/usr/local/bin"},
+                                       "windows": {"EMACS": "1"}},
+                        "suppress_echo": false,
+                        "syntax": "Packages/Matlab/Matlab.tmLanguage"                       
+                    }
+                }
+            ]
+        }]
+    }
+]
